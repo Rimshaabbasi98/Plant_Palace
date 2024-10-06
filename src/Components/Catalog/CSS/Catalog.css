@@ -1,0 +1,214 @@
+/* General Styling (unchanged for laptop and desktop) */
+.catalog-container {
+    display: flex;
+    margin: 20px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sorting-section {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.sorting-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sorting-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.sorting-section select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Shop Section */
+.shop-section {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: rgba(245, 245, 245, 0.929);
+    padding: 6rem 10px;
+}
+
+.shop-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #333;
+    margin: 15px auto 0 auto;
+}
+
+.shop-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.shop-category-circle {
+    cursor: pointer;
+    width: 10%; 
+}
+
+.shop-category-circle img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.shop-category-circle span {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Catalog Grid */
+.catalog-items-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 2.5rem;
+}
+
+.catalog-item {
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+}
+
+.catalog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.catalog-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.catalog-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.price-range {
+    margin-top: 20px;
+}
+
+.price-range label {
+    display: block;
+    margin: 5px 0;
+}
+
+.price-range input {
+    width: calc(50% - 10px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.sort-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet Devices */
+@media (min-width: 768px) {
+    .catalog-container {
+        flex-direction: row;
+    }
+
+    .sorting-section {
+        width: 200px;
+        margin-right: 20px;
+    }
+
+    .shop-category-circle {
+        width: 15%;
+    }
+
+    .shop-title {
+        font-size: 32px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+    .shop-categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .shop-category-circle {
+        width: 45%; /* Two circles per row */
+    }
+
+    .shop-category-circle img {
+        width: 100%;
+        height: auto;
+    }
+
+    .shop-title {
+        font-size: 28px;
+    }
+}
+
+/* Desktop Devices */
+@media (min-width: 1024px) {
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+
+    .shop-category-circle {
+        width: 12%;
+    }
+
+    .shop-title {
+        font-size: 36px;
+    }
+}
