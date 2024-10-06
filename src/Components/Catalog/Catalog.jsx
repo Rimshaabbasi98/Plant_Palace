@@ -15,7 +15,6 @@ const Catalog = () => {
     const location = useLocation();
 
     useEffect(() => {
-        // Extract filter from URL query parameters
         const params = new URLSearchParams(location.search);
         const category = params.get('category');
         if (category) {
